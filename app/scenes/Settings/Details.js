@@ -134,7 +134,7 @@ class Details extends React.Component<Props> {
               {this.subdomain && (
                 <HelpText small>
                   Your knowledge base will be accessible at{" "}
-                  <strong>{this.subdomain}.getoutline.com</strong>
+                  <strong>{this.subdomain}.slaig.com</strong>
                 </HelpText>
               )}
             </>

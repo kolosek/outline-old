@@ -10,6 +10,7 @@ import {
   GroupIcon,
   LinkIcon,
   TeamIcon,
+  BulletedListIcon,
   ExpandedIcon,
 } from "outline-icons";
 import * as React from "react";
@@ -110,6 +111,13 @@ function SettingsSidebar() {
               icon={<LinkIcon color="currentColor" />}
               label={t("Share Links")}
             />
+	    {can.auditLog && (
+		  <SidebarLink
+		  to="/settings/events"
+		  icon={<BulletedListIcon color="currentColor" />}
+		  label="Audit Log"
+		  />
+	    )}
             {can.export && (
               <SidebarLink
                 to="/settings/import-export"
@@ -126,7 +134,14 @@ function SettingsSidebar() {
                 icon={<SlackIcon color="currentColor" />}
                 label="Slack"
               />
-              {isHosted && (
+	   {isHosted && (
+              <SidebarLink
+                to="/settings/shares"
+                icon={<LinkIcon color="currentColor" />}
+                label="Share Links"
+              />
+	    )}
+              {can.export && (
                 <SidebarLink
                   to="/settings/integrations/zapier"
                   icon={<ZapierIcon color="currentColor" />}
